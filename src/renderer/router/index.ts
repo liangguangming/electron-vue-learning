@@ -66,6 +66,15 @@ const routes: RouteRecordRaw[] = [
     }
   },
   {
+    path: '/performance-demo',
+    name: 'PerformanceDemo',
+    component: () => import('../views/PerformanceDemo.vue'),
+    meta: {
+      title: '性能优化',
+      requiresAuth: false
+    }
+  },
+  {
     path: '/router-demo',
     name: 'RouterDemo',
     component: () => import('../views/RouterDemo.vue'),

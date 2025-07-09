@@ -60,6 +60,12 @@
             <p>学习Vue 3官方推荐的状态管理库</p>
             <span class="status completed">已完成</span>
           </div>
+          
+          <div class="section-card" @click="navigateTo('/performance-demo')">
+            <h3>性能优化</h3>
+            <p>学习组件懒加载、虚拟滚动、内存管理等优化技巧</p>
+            <span class="status completed">已完成</span>
+          </div>
         </div>
       </section>
 
@@ -72,8 +78,8 @@
           <button @click="navigateTo('/pinia-demo')" class="btn secondary">
             Pinia状态管理
           </button>
-          <button @click="navigateTo('/router-demo')" class="btn accent">
-            路由演示
+          <button @click="navigateTo('/performance-demo')" class="btn accent">
+            性能优化
           </button>
         </div>
       </section>
