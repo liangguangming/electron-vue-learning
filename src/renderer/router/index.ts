@@ -57,6 +57,15 @@ const routes: RouteRecordRaw[] = [
     }
   },
   {
+    path: '/pinia-demo',
+    name: 'PiniaDemo',
+    component: () => import('../views/PiniaDemo.vue'),
+    meta: {
+      title: 'Pinia状态管理',
+      requiresAuth: false
+    }
+  },
+  {
     path: '/router-demo',
     name: 'RouterDemo',
     component: () => import('../views/RouterDemo.vue'),

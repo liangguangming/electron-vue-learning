@@ -124,16 +124,18 @@ npm run type-check
   - [x] 系统托盘 (Tray模块)
   - [x] 外部链接 (shell模块)
 
-### 第五阶段：状态管理 (Pinia) ⏳
-- [ ] **Pinia基础**
-  - [ ] Store创建和配置
-  - [ ] State管理
-  - [ ] Getters计算属性
-  - [ ] Actions异步操作
-- [ ] **状态管理实践**
-  - [ ] 用户状态管理
-  - [ ] 应用配置管理
-  - [ ] 数据持久化
+### 第五阶段：状态管理 (Pinia) ✅
+- [x] **Pinia基础**
+  - [x] Store创建和配置 (src/renderer/stores/index.ts)
+  - [x] State管理 (ref, reactive)
+  - [x] Getters计算属性 (computed)
+  - [x] Actions异步操作 (async/await)
+- [x] **状态管理实践**
+  - [x] 用户状态管理 (src/renderer/stores/user.ts)
+  - [x] 应用配置管理 (src/renderer/stores/settings.ts)
+  - [x] 购物车状态管理 (src/renderer/stores/cart.ts)
+  - [x] 数据持久化 (localStorage)
+  - [x] 状态调试和监控
 
 ### 第六阶段：高级特性和优化 ⏳
 - [ ] **性能优化**
@@ -168,11 +170,9 @@ npm run type-check
 - ✅ Electron 主进程开发 (IPC通信、文件操作、系统API、应用菜单、系统托盘)
 
 **进行中**: 
-- 🔄 Pinia 状态管理 (Store创建、状态管理、数据持久化)
+- 🔄 高级特性和优化 (性能优化、错误处理、打包部署)
 
 **待开始**: 
-- ⏳ Pinia 状态管理
-- ⏳ 高级特性和优化
 - ⏳ 实战项目开发
 
 ## 技术栈
@@ -192,6 +192,47 @@ npm run type-check
 - Electron 28+
 
 ## 学习笔记
+
+### Pinia 状态管理学习总结
+
+#### Pinia基础概念
+- **Store定义**: 使用 `defineStore()` 创建状态存储
+- **组合式API**: 使用 `ref()`, `computed()`, `watch()` 管理状态
+- **状态结构**: State(状态) + Getters(计算属性) + Actions(动作)
+
+#### 核心Store实现
+1. **用户状态管理** (`useUserStore`)
+   - 用户认证状态 (登录/登出)
+   - 用户信息管理 (角色、权限)
+   - Token管理和刷新
+   - 本地存储持久化
+
+2. **应用设置管理** (`useSettingsStore`)
+   - 主题切换 (浅色/深色/自动)
+   - 界面配置 (紧凑模式、动画、侧边栏)
+   - 通知系统 (声音、时长、桌面通知)
+   - 系统主题监听
+
+3. **购物车状态管理** (`useCartStore`)
+   - 商品管理 (添加、删除、数量更新)
+   - 优惠券系统 (应用、验证、计算)
+   - 价格计算 (小计、折扣、总计)
+   - 订单处理 (库存检查、结算)
+
+#### 技术要点
+- **响应式状态**: 使用 `ref()` 和 `reactive()` 创建响应式状态
+- **计算属性**: 使用 `computed()` 创建派生状态
+- **异步操作**: 在Actions中使用 `async/await` 处理异步逻辑
+- **状态持久化**: 使用 `localStorage` 实现数据持久化
+- **状态监听**: 使用 `watch()` 监听状态变化并自动保存
+- **类型安全**: 完整的TypeScript类型定义
+
+#### 最佳实践
+- **模块化设计**: 按功能模块拆分Store
+- **状态隔离**: 每个Store负责特定领域的状态
+- **数据验证**: 在Actions中进行数据验证和错误处理
+- **性能优化**: 使用计算属性缓存计算结果
+- **调试支持**: 提供状态调试和监控功能
 
 ### Vue Router 路由管理学习总结
 

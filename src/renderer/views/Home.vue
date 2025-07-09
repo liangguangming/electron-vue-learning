@@ -54,6 +54,12 @@
             <p>体验动态路由参数和路由守卫</p>
             <span class="status in-progress">进行中</span>
           </div>
+          
+          <div class="section-card" @click="navigateTo('/pinia-demo')">
+            <h3>Pinia状态管理</h3>
+            <p>学习Vue 3官方推荐的状态管理库</p>
+            <span class="status completed">已完成</span>
+          </div>
         </div>
       </section>
 
@@ -63,11 +69,11 @@
           <button @click="navigateTo('/electron-demo')" class="btn primary">
             Electron功能演示
           </button>
-          <button @click="navigateTo('/router-demo')" class="btn secondary">
-            路由演示
+          <button @click="navigateTo('/pinia-demo')" class="btn secondary">
+            Pinia状态管理
           </button>
-          <button @click="navigateTo('/login')" class="btn accent">
-            登录测试
+          <button @click="navigateTo('/router-demo')" class="btn accent">
+            路由演示
           </button>
         </div>
       </section>

@@ -16,6 +16,7 @@
           <router-link to="/components" class="nav-link" active-class="active">组件通信</router-link>
           <router-link to="/lifecycle" class="nav-link" active-class="active">生命周期</router-link>
           <router-link to="/electron-demo" class="nav-link" active-class="active">Electron功能</router-link>
+          <router-link to="/pinia-demo" class="nav-link" active-class="active">Pinia状态管理</router-link>
           <router-link to="/router-demo" class="nav-link" active-class="active">路由演示</router-link>
         </div>
         
