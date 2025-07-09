@@ -48,6 +48,15 @@ const routes: RouteRecordRaw[] = [
     }
   },
   {
+    path: '/electron-demo',
+    name: 'ElectronDemo',
+    component: () => import('../views/ElectronDemo.vue'),
+    meta: {
+      title: 'Electron功能演示',
+      requiresAuth: false
+    }
+  },
+  {
     path: '/router-demo',
     name: 'RouterDemo',
     component: () => import('../views/RouterDemo.vue'),

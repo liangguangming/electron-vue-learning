@@ -37,10 +37,16 @@
             <span class="status completed">已完成</span>
           </div>
           
+          <div class="section-card" @click="navigateTo('/electron-demo')">
+            <h3>Electron功能</h3>
+            <p>学习IPC通信、文件操作、系统API等</p>
+            <span class="status in-progress">进行中</span>
+          </div>
+          
           <div class="section-card" @click="navigateTo('/router-demo')">
             <h3>路由管理</h3>
             <p>学习Vue Router的路由配置和导航</p>
-            <span class="status in-progress">进行中</span>
+            <span class="status completed">已完成</span>
           </div>
           
           <div class="section-card" @click="navigateTo('/dynamic/123')">
@@ -54,14 +60,14 @@
       <section class="quick-actions">
         <h2>快速操作</h2>
         <div class="action-buttons">
-          <button @click="navigateTo('/router-demo')" class="btn primary">
+          <button @click="navigateTo('/electron-demo')" class="btn primary">
+            Electron功能演示
+          </button>
+          <button @click="navigateTo('/router-demo')" class="btn secondary">
             路由演示
           </button>
-          <button @click="navigateTo('/login')" class="btn secondary">
+          <button @click="navigateTo('/login')" class="btn accent">
             登录测试
-          </button>
-          <button @click="navigateTo('/dynamic/999')" class="btn accent">
-            动态路由测试
           </button>
         </div>
       </section>
