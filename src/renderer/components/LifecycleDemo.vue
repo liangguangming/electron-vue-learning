@@ -41,17 +41,14 @@
       </div>
     </section>
 
-    <!-- 移除子组件部分，避免导入错误 -->
-         <!-- 子组件示例 -->
+    <!-- 子组件示例已移除 -->
     <section class="demo-section" v-if="isVisible">
       <h3>子组件生命周期</h3>
-      <ChildLifecycle 
-        :key="childKey"
-        :message="data"
-        @child-mounted="onChildMounted"
-        @child-updated="onChildUpdated"
-        @child-unmounted="onChildUnmounted"
-      />
+      <div class="child-placeholder">
+        <p>子组件已移除，避免导入错误</p>
+        <p>当前数据: {{ data }}</p>
+        <button @click="updateData">更新数据</button>
+      </div>
     </section>
 
   </div>
@@ -68,9 +65,6 @@ import {
   onBeforeUnmount,
   nextTick
 } from 'vue'
-
-import ChildLifecycle from './ChildLifecycle.vue'
-
 
 // 响应式数据
 const componentStatus = ref('初始化中...')
@@ -247,7 +241,34 @@ onUnmounted(() => {
 
 .log-item.success {
   background-color: #e8f5e8;
-  color: #388e3c;
+  color: #2e7d32;
+}
+
+.child-placeholder {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border: 2px dashed #dee2e6;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.child-placeholder p {
+  margin: 10px 0;
+  color: #666;
+}
+
+.child-placeholder button {
+  background-color: #42b883;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.child-placeholder button:hover {
+  background-color: #369870;
 }
 
 .log-item.error {
